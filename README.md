@@ -28,3 +28,20 @@ https://asia-south1-poojapath-3756c.cloudfunctions.net/razorpayWebhook
 ```
 
 The webhook must be deployed from the Android project because its Firebase Functions source lives in `../AndroidStudioProjects/PathPooja/functions`.
+
+## Publish with Cloudflare Pages
+
+This project is plain static HTML; do not select a React, Android, Kotlin or other framework preset.
+
+In **Workers & Pages → Create application → Pages → Connect to Git**, set:
+
+| Field | Value |
+| --- | --- |
+| Framework preset | `None` |
+| Root directory | `/` (leave blank if the repository root is selected) |
+| Build command | `npm run build` |
+| Build output directory | `site` |
+
+The `build` script only checks that the static files are present; it has no dependencies and produces the deployable files directly in `site/`.
+
+If this is a Direct Upload instead of a Git-connected Pages project, upload the **contents** of the `site/` directory. Do not upload the repository root.

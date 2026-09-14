@@ -1,0 +1,9 @@
+{
+  "name": "path-pooja-website",
+  "private": true,
+  "version": "1.0.0",
+  "description": "Static public website for Path Pooja",
+  "scripts": {
+    "build": "node -e \"const fs=require('fs'); const required=['site/index.html','site/styles.css','site/payment-config.js']; const missing=required.filter((file)=>!fs.existsSync(file)); if(missing.length) throw new Error('Missing static site files: '+missing.join(', ')); console.log('Static site is ready in ./site');\""
+  }
+}
