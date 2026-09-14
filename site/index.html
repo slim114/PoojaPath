@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Path Pooja is an Android app for Indian festival dates, daily spiritual planning and personal reminders.">
+    <title>Path Pooja — Festivals and reminders</title>
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand" href="/" aria-label="Path Pooja home">
+        <span class="brand-mark" aria-hidden="true">ॐ</span>
+        <span>Path Pooja</span>
+      </a>
+      <a class="header-link" href="#membership">Membership</a>
+    </header>
+
+    <main>
+      <section class="hero">
+        <p class="eyebrow">YOUR PERSONAL POoja companion</p>
+        <h1>Keep every sacred day close.</h1>
+        <p class="hero-copy">Path Pooja brings Indian festival dates, state-wise calendars and gentle reminders into one simple Android app.</p>
+        <a class="button button-primary" href="#membership">Explore membership <span aria-hidden="true">→</span></a>
+        <p class="availability">Available on Android</p>
+      </section>
+
+      <section class="features" aria-label="Path Pooja features">
+        <article>
+          <span class="feature-icon" aria-hidden="true">◐</span>
+          <h2>Festival calendar</h2>
+          <p>Browse important Hindu festivals and observances throughout the year.</p>
+        </article>
+        <article>
+          <span class="feature-icon" aria-hidden="true">⌖</span>
+          <h2>Local to you</h2>
+          <p>View regional celebrations and dates organised for your selected state.</p>
+        </article>
+        <article>
+          <span class="feature-icon" aria-hidden="true">◷</span>
+          <h2>Thoughtful reminders</h2>
+          <p>Choose reminders that help you prepare for the days that matter to you.</p>
+        </article>
+      </section>
+
+      <section class="membership" id="membership">
+        <div>
+          <p class="eyebrow">PATH POOJA MEMBERSHIP</p>
+          <h2>More time for what matters.</h2>
+          <p>Membership unlocks premium Path Pooja features in the Android app. The applicable monthly price, billing date and payment method are clearly shown in the app before you approve a payment.</p>
+        </div>
+        <div class="membership-card">
+          <p class="card-label">Monthly membership</p>
+          <p class="price">Billed monthly</p>
+          <ul>
+            <li>Secure payment through Razorpay</li>
+            <li>No free trial</li>
+            <li>Cancel before the next renewal</li>
+          </ul>
+          <a id="pay-button" class="button button-primary pay-button" href="#membership">Pay securely with Razorpay <span aria-hidden="true">→</span></a>
+          <p class="card-note">Membership is purchased only inside the Path Pooja Android app.</p>
+        </div>
+      </section>
+
+      <section class="help">
+        <p class="eyebrow">SUPPORT</p>
+        <h2>Need help with a membership?</h2>
+        <p>For payment, cancellation or account questions, contact the Path Pooja support team. Include the email address used in the app and your Razorpay payment ID, if available.</p>
+        <!-- Replace the placeholder before deploying. -->
+        <a class="button button-secondary" href="mailto:SUPPORT_EMAIL">Email support</a>
+      </section>
+    </main>
+
+    <footer>
+      <a class="brand" href="/"><span class="brand-mark" aria-hidden="true">ॐ</span><span>Path Pooja</span></a>
+      <nav aria-label="Legal">
+        <a href="privacy.html">Privacy</a>
+        <a href="terms.html">Terms</a>
+        <a href="refunds.html">Cancellations & refunds</a>
+      </nav>
+      <p>© <span id="year"></span> Path Pooja</p>
+    </footer>
+    <script src="payment-config.js"></script>
+    <script>
+      document.getElementById("year").textContent = new Date().getFullYear();
+      const paymentLink = window.PATH_POOJA_PAYMENT_LINK;
+      const payButton = document.getElementById("pay-button");
+      if (paymentLink) {
+        payButton.href = paymentLink;
+        payButton.target = "_blank";
+        payButton.rel = "noopener noreferrer";
+      } else {
+        payButton.addEventListener("click", (event) => {
+          event.preventDefault();
+          window.alert("Online checkout is currently available in the Path Pooja Android app.");
+        });
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,86 @@
+:root {
+  --ink: #192c27;
+  --muted: #5f6e69;
+  --cream: #fffaf0;
+  --paper: #fffdf8;
+  --saffron: #d76428;
+  --saffron-dark: #a63f15;
+  --sage: #e6f0e4;
+  --line: #d9e0d4;
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  color: var(--ink);
+  background: var(--cream);
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 18px;
+  line-height: 1.55;
+}
+a { color: inherit; }
+.site-header, main > section, footer {
+  width: min(1120px, calc(100% - 40px));
+  margin: 0 auto;
+}
+.site-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 22px 0;
+}
+.brand { display: inline-flex; align-items: center; gap: 10px; font-weight: 700; text-decoration: none; }
+.brand-mark {
+  display: grid;
+  width: 34px;
+  height: 34px;
+  place-items: center;
+  border-radius: 50%;
+  color: white;
+  background: var(--saffron);
+  font-size: 20px;
+}
+.header-link { font-size: 16px; text-decoration: none; }
+.hero { max-width: 800px; padding: 94px 0 112px; text-align: center; }
+.eyebrow { margin: 0 0 12px; color: var(--saffron-dark); font-family: Arial, sans-serif; font-size: 12px; font-weight: 700; letter-spacing: .13em; }
+h1, h2 { margin: 0; font-weight: 500; line-height: 1.08; }
+h1 { font-size: clamp(48px, 9vw, 92px); letter-spacing: -.055em; }
+h2 { font-size: clamp(36px, 5vw, 56px); letter-spacing: -.04em; }
+.hero-copy { max-width: 610px; margin: 28px auto 31px; color: var(--muted); font-size: clamp(19px, 2.3vw, 23px); }
+.button { display: inline-flex; align-items: center; gap: 10px; padding: 13px 21px; border-radius: 3px; font-family: Arial, sans-serif; font-size: 15px; font-weight: 700; text-decoration: none; }
+.button-primary { color: white; background: var(--saffron); }
+.button-primary:hover { background: var(--saffron-dark); }
+.button-secondary { color: white; background: var(--ink); }
+.availability { margin: 18px 0 0; color: var(--muted); font-family: Arial, sans-serif; font-size: 13px; }
+.features { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; padding: 72px 0; border-top: 1px solid var(--line); }
+.features article { padding-right: 25px; }
+.feature-icon { color: var(--saffron); font-size: 34px; }
+.features h2 { margin-top: 15px; font-size: 28px; }
+.features p, .membership p, .help p { color: var(--muted); }
+.membership { display: grid; grid-template-columns: 1.2fr .8fr; gap: 80px; align-items: center; padding: 100px clamp(24px, 7vw, 88px); background: var(--sage); }
+.membership-card { padding: 31px; background: var(--paper); box-shadow: 0 12px 30px #5c705514; }
+.card-label { margin: 0; color: var(--ink) !important; font-family: Arial, sans-serif; font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: .09em; }
+.price { margin: 14px 0 18px; color: var(--saffron-dark) !important; font-size: 27px; }
+ul { margin: 0; padding-left: 19px; color: var(--muted); }
+.card-note { margin: 22px 0 0; font-family: Arial, sans-serif; font-size: 13px; }
+.pay-button { width: 100%; justify-content: center; margin-top: 28px; }
+.help { padding: 120px 0; text-align: center; }
+.help p { max-width: 710px; margin: 20px auto 30px; }
+footer { display: grid; grid-template-columns: 1fr auto 1fr; align-items: center; gap: 20px; padding: 34px 0; border-top: 1px solid var(--line); font-family: Arial, sans-serif; font-size: 13px; }
+footer nav { display: flex; gap: 20px; } footer nav a { text-decoration: none; } footer p { justify-self: end; margin: 0; color: var(--muted); }
+.legal { width: min(760px, calc(100% - 40px)); margin: 0 auto; padding: 70px 0 96px; }
+.legal h1 { font-size: clamp(42px, 7vw, 66px); }
+.legal h2 { margin-top: 48px; font-size: 29px; }
+.legal p, .legal li { color: var(--muted); }
+.legal .updated { margin-top: 14px; font-family: Arial, sans-serif; font-size: 14px; }
+.legal-header { width: min(1120px, calc(100% - 40px)); margin: 0 auto; padding: 22px 0; }
+@media (max-width: 700px) {
+  body { font-size: 17px; }
+  .hero { padding: 64px 0 74px; }
+  .features, .membership { grid-template-columns: 1fr; }
+  .features { gap: 35px; padding: 55px 0; }
+  .membership { gap: 38px; padding: 58px 28px; }
+  footer { grid-template-columns: 1fr; padding: 28px 0; }
+  footer p { justify-self: start; } footer nav { flex-wrap: wrap; }
+}
